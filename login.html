@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>GoodReels: Log In</title>
-	</head>
-	
-	<body>
-		<h1>Log-In to GoodReels</h1>
-		
-		<form name="login">
-			<p>Username: <input type="text" name="userid"/></p>
-			<p>Password: <input	type="password"
-										name="pass"
-										onkeydown="	if (event.keyCode == 13) check(this.form)"
-                     	/>
-         </p>
-			<input type="button" onclick="check(this.form)" value="Log-In"/>
-		</form>
-		<script langauge="javascript">
-			/* This will check to make sure the values entered are valid */
-			function check(form)
-			{
-				if(form.userid.value == "user" && form.pass.value =="user")
-				{
-					window.location.href='http://goodreels.github.io/index';//returns to main page if the username & password both match
-				}
-				else
-				{
-					alert("Warning: Incorrect Username and/or Password!");//error if there is an incorrect username or password
-				}
-			}
-		</script>
-		
-	</body>
+<head>
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+</head>
+<body>
+  <div id="my-signin2"></div>
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</body>
+</html>
