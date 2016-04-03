@@ -1,0 +1,55 @@
+/*css reset*/
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix:after {
+	display: table;
+	content: " ";
+	clear: both;
+}
+
+/* global styles */
+
+.hide {
+	display: none;
+}
+
+.centerme {
+	text-align: center;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+
+/* page styes */
+
+/* selectors */
+/* changed from body to a class in order to allow different pages to have the same style sheet*/
+.home {
+	/*background: rgba(225, 244, 180, 0.81);*/
+	/*font-family: Tahoma, Geneva, sans-serif;*/
+	/*font-family: Geneva, Tahoma, sans-serif;*/
+	font-family: 'Open Sans', sans-serif;
+}
+
+.container{   
+	width: 960px;
+	margin: 0 auto; /* auto adjust itself */
+}
+
+table, th, td {
+    border: 2px solid black;
+}
